@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dq2kanotewcr8"]
+[gd_scene load_steps=4 format=3 uid="uid://dq2kanotewcr8"]
 
 [ext_resource type="Texture2D" uid="uid://cnlikwnwb6bdp" path="res://ui/parabens.png" id="1_1stc2"]
 [ext_resource type="Script" uid="uid://fyjaaqk28h64" path="res://scenes/parabens.gd" id="1_8a1ck"]
+[ext_resource type="PackedScene" uid="uid://v35arve7u1sq" path="res://ui/timer_ui.tscn" id="3_txx3k"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -17,3 +18,10 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_1stc2")
+
+[node name="TimerUI" parent="." instance=ExtResource("3_txx3k")]
+layout_mode = 1
+anchor_left = 0.52708334
+anchor_top = 0.78333336
+anchor_right = 0.9578125
+anchor_bottom = 0.84166664
