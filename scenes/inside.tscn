@@ -1,8 +1,8 @@
-[gd_scene load_steps=16 format=4 uid="uid://1pyls8qoywgm"]
+[gd_scene load_steps=18 format=4 uid="uid://1pyls8qoywgm"]
 
 [ext_resource type="Script" uid="uid://crkso4vvjs3ia" path="res://scenes/inside.gd" id="1_08jqi"]
 [ext_resource type="PackedScene" uid="uid://born2i425vd51" path="res://world/para_in/parallax_in.tscn" id="2_2b3hl"]
-[ext_resource type="Texture2D" uid="uid://cwngvt7elxy5p" path="res://world/tileset_factory.png" id="2_08jqi"]
+[ext_resource type="Texture2D" uid="uid://cwngvt7elxy5p" path="res://TileSetttttATUALIZADO.png" id="2_08jqi"]
 [ext_resource type="PackedScene" uid="uid://by5ed8303msvb" path="res://world/peidante.tscn" id="3_ukexp"]
 [ext_resource type="PackedScene" uid="uid://c2sdt767cpxlt" path="res://world/out_of_bounds.tscn" id="4_4qeqt"]
 [ext_resource type="PackedScene" uid="uid://cseudn7o0vday" path="res://scenes/sceneTrigger.tscn" id="4_08jqi"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://hjdu7xmi20x4" path="res://ui/hud_numbers-0.png" id="7_c000n"]
 [ext_resource type="Texture2D" uid="uid://bgt4w0tjev1in" path="res://ui/hud_numbers-1.png" id="8_4qeqt"]
 [ext_resource type="Texture2D" uid="uid://cko12fkiwmjq7" path="res://ui/hud_numbers-2.png" id="9_ukexp"]
+[ext_resource type="Texture2D" uid="uid://bje57wnho7d5i" path="res://ui/bolo_portal.jpg" id="12_ul6jp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2b3hl"]
 resource_name = "facotry"
@@ -103,6 +104,9 @@ func set_camera_limits_from_tilemap():
 	limit_bottom = int(map_world_end.y)
 	limit_top = int(map_world_start.y)
 "
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xfjx7"]
+size = Vector2(262.75, 311.5)
 
 [node name="inside" type="Node2D"]
 script = ExtResource("1_08jqi")
@@ -214,3 +218,17 @@ script = SubResource("GDScript_08jqi")
 
 [node name="LifeUI" parent="CanvasLayer" instance=ExtResource("6_77v4g")]
 life_textures = Array[Texture2D]([ExtResource("7_c000n"), ExtResource("8_4qeqt"), ExtResource("9_ukexp")])
+
+[node name="Area2D" parent="." instance=ExtResource("4_08jqi")]
+collision_layer = 3
+collision_mask = 3
+connected_scene = "parabens"
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+position = Vector2(-1379, -14858.999)
+scale = Vector2(1.1092441, 1.4622598)
+texture = ExtResource("12_ul6jp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1378.625, -14859.75)
+shape = SubResource("RectangleShape2D_xfjx7")
